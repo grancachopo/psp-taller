@@ -1,1 +1,16 @@
-<p>home works!</p>
+<h1>Listado de ofertas</h1>
+<table class="table" *ngIf="ofertas">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Descripción general de la oferta</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let oferta of this.ofertas">
+    <th scope="row">{{oferta.id}}</th>
+    <td>{{oferta.titulo}}  <span *ngIf="hayUsuario">Eliminar</span></td>
+  </tr>
+  </tbody>
+</table>
+<div class="alert-danger" *ngIf="!ofertas">¡No se encontraron ofertas!</div>
