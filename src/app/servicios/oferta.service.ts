@@ -17,16 +17,11 @@ export class OfertaService {
     });
   }
 
-  /**
-   * Método que obtiene las ofertas
-   * @return Array de {@link Oferta}
-   */
   obtenerOfertas(): Observable<Array<Oferta>> {
     return this.http.get<Array<Oferta>>('http://localhost:8080/api/ofertas'); // FIXME: environment
   }
 
   guardadoFalso(): void {
-    // Recuperar el objeto del formulario (igual login) [COMPONETE]
 
     let objeto: any = {
       titulo: 'Buckinghamshire',

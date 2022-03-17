@@ -19,16 +19,15 @@ export class LoginService {
 
   }
 
-  hacerLogin(loginIn: Login):Observable<Loginout>{
-    // Llamada al login.
+  hacerLogin(loginIn: Login): Observable<Loginout> {
+
     return this
       .http
-      .post<Loginout>('http://localhost:8080/api/authenticate',loginIn)
-      .pipe(map(respuestaBack =>{
-        // Publicar que ya ha inciados
+      .post<Loginout>('http://localhost:8080/api/authenticate', loginIn)
+      .pipe(map(respuestaBack => {
+
         this.loginBehaviourSubject.next(respuestaBack);
 
-        // Guardar la respuesta (navegador)
         let value = JSON.stringify(respuestaBack);
         localStorage.setItem('login', value);
         console.log('Se guardo el token' + value);
@@ -43,6 +42,6 @@ export class LoginService {
   logout(): void {
     localStorage.removeItem('login');
     this.loginBehaviourSubject.next(null);
-    //TODO: redirigir al Login
+
   }
 }

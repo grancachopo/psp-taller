@@ -11,20 +11,13 @@
     "email" : "Madge_Mayert@hotmail.com"
     },
 */
-export class Oferta{
-
+export class Oferta {
     public id: number;
-
     public titulo: string;
-
     public descripcion: string;
-
     public empresa: string;
-
     public salario: number;
-
     public ciudad: string;
-
     public email: string;
 
     constructor(id: number, titulo: string, descripcion: string, empresa: string, salario: number, ciudad: string, email: string) {
@@ -35,5 +28,5 @@ export class Oferta{
         this.salario = salario;
         this.ciudad = ciudad;
         this.email = email;
-      }
+    }
 }

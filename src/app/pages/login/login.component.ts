@@ -22,10 +22,9 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   login(): void {
-    // TODO: Comprobar si el fomulario es valido, antes de enviarlo.
 
     let loginIn: Login = new Login(
       this.formularioLogin.controls['username'].value,
